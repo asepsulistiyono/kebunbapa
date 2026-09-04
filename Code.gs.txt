@@ -1,0 +1,107 @@
+Code.gs
+
+// ============================================
+// KEBUN PAK TANI - GOOGLE APPS SCRIPT
+// Paste kode ini di script.google.com
+// ============================================
+
+// ⚠️ GANTI DENGAN ID GOOGLE SHEET ANDA
+// Cara dapat ID: buka Google Sheet → lihat URL
+// https://docs.google.com/spreadsheets/d/ 【SHEET_ID_DISINI】 /edit
+const SHEET_ID = 'MASUKKAN_SHEET_ID_DISINI';
+
+// ============================================
+// HANDLE GET REQUEST
+// ============================================
+function doGet(e) {
+  try {
+    const ss = SpreadsheetApp.openById(SHEET_ID);
+    const action = e.parameter.action;
+
+    // --- ACTION: ambil profil toko ---
+    if (action === 'profil') {
+      return getProfil(ss);
+    }
+
+    // --- ACTION: ambil daftar produk ---
+    if (action === 'produk') {
+      return getProduk(ss);
+    }
+
+    // --- Default response ---
+    return jsonResponse({
+      status: 'online',
+      message: '🌱 API Kebun Pak Tani aktif!',
+      endpoints: {
+        profil: '?action=profil',
+        produk: '?action=produk'
+      }
+    });
+
+  } catch (error) {
+    return jsonResponse({ error: error.message });
+  }
+}
+
+// ============================================
+// GET PROFIL
+// ============================================
+function getProfil(ss) {
+  const sheet = ss.getSheetByName('Profil');
+  if (!sheet) return jsonResponse({ error: 'Sheet "Profil" tidak ditemukan' });
+
+  const data = sheet.getDataRange().getValues();
+  if (data.length < 2) return jsonResponse({ error: 'Data profil kosong' });
+
+  const headers = data[0];
+  const values = data[1]; // Baris ke-2 = data aktual
+
+  const profil = {};
+  for (let i = 0; i < headers.length; i++) {
+    profil[String(headers[i]).trim()] = String(values[i] || '').trim();
+  }
+
+  return jsonResponse(profil);
+}
+
+// ============================================
+// GET PRODUK
+// ============================================
+function getProduk(ss) {
+  const sheet = ss.getSheetByName('Produk');
+  if (!sheet) return jsonResponse([]);
+
+  const data = sheet.getDataRange().getValues();
+  if (data.length < 2) return jsonResponse([]);
+
+  const headers = data[0];
+  const products = [];
+
+  for (let i = 1; i < data.length; i++) {
+    const row = data[i];
+
+    // Skip baris kosong
+    if (!row[0]) continue;
+
+    let obj = {};
+    headers.forEach((h, idx) => {
+      obj[String(h).trim()] = row[idx];
+    });
+
+    // Hanya tampilkan yang statusnya "Tersedia"
+    if (String(obj.Status || '').toLowerCase() === 'tersedia') {
+      products.push(obj);
+    }
+  }
+
+  return jsonResponse(products);
+}
+
+// ============================================
+// HELPER: Return JSON Response
+// ============================================
+function jsonResponse(data) {
+  return ContentService
+    .createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON);
+}

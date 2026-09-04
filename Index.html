@@ -1,0 +1,91 @@
+Index.html
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌱 Kebun Pak Tani - Toko Sayur Organik</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1 id="namaToko">🌱 Kebun Pak Tani</h1>
+      <p id="taglineToko" class="tagline">Sayur & Buah Organik Segar dari Kebun Langsung!</p>
+    </div>
+  </header>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar">
+    <a href="#produk" class="nav-link">🥬 Produk</a>
+    <a href="#tentang" class="nav-link">📖 Tentang</a>
+    <a href="#kontak" class="nav-link">📞 Kontak</a>
+  </nav>
+
+  <!-- ===== PRODUK SECTION ===== -->
+  <section id="produk" class="section">
+    <h2 class="section-title">🥬 Produk Kami</h2>
+    <div id="produkGrid" class="produk-grid">
+      <!-- Produk dimuat otomatis via JavaScript -->
+      <div class="loading" id="loadingProduk">⏳ Memuat produk...</div>
+    </div>
+  </section>
+
+  <!-- ===== TENTANG KEBUN ===== -->
+  <section id="tentang" class="section about-section">
+    <h2 class="section-title">📖 Tentang Kebun Kami</h2>
+    <div class="about-content">
+      <p id="tentangText">
+        Kami adalah kebun organik yang berkomitmen menyediakan sayur dan buah 
+        segar tanpa pestisida kimia. Semua hasil panen langsung dari kebun 
+        kami ke meja makan Anda!
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== KONTAK & INFO ===== -->
+  <section id="kontak" class="section contact-section">
+    <h2 class="section-title">📞 Hubungi Kami</h2>
+    <div class="contact-card">
+      <div class="contact-item">
+        <span class="contact-icon">🏡</span>
+        <div>
+          <strong>Nama Kebun</strong>
+          <p id="infoNama">Memuat...</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">📍</span>
+        <div>
+          <strong>Alamat</strong>
+          <p id="infoAlamat">Memuat...</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">📱</span>
+        <div>
+          <strong>WhatsApp</strong>
+          <p><a id="infoWA" href="#" target="_blank">Memuat...</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">⏰</span>
+        <div>
+          <strong>Jam Operasional</strong>
+          <p id="infoJam">Memuat...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>© 2026 <span id="footerNama">Kebun Pak Tani</span> — Dibuat dengan 💚</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
