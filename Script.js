@@ -1,11 +1,9 @@
-Script.js
-
 // ============================================
 // KEBUN PAK TANI - SCRIPT.JS
 // ============================================
 
 // ⚠️ GANTI URL INI DENGAN URL GOOGLE APPS SCRIPT ANDA
-const API_URL = 'https://script.google.com/macros/s/AKfycbxIZTTEpWYhWHTL6KcBZqcPterj6_2AVHTFvSznMG1UkoPfjOEWnHarXr0taFLMMCAg/exec';
+const API_URL = ''; // Masukkan URL Google Apps Script Anda di sini
 
 // ============================================
 // MUAT SEMUA DATA SAAT HALAMAN DIBUKA
