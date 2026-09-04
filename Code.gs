@@ -1,5 +1,3 @@
-Code.gs
-
 // ============================================
 // KEBUN PAK TANI - GOOGLE APPS SCRIPT
 // Paste kode ini di script.google.com
@@ -8,7 +6,7 @@ Code.gs
 // ⚠️ GANTI DENGAN ID GOOGLE SHEET ANDA
 // Cara dapat ID: buka Google Sheet → lihat URL
 // https://docs.google.com/spreadsheets/d/ 【SHEET_ID_DISINI】 /edit
-const SHEET_ID = 'MASUKKAN_SHEET_ID_DISINI';
+const SHEET_ID = ''; // Masukkan ID Google Sheet Anda di sini
 
 // ============================================
 // HANDLE GET REQUEST
