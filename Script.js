@@ -3,7 +3,7 @@
 // ============================================
 
 // ⚠️ GANTI URL INI DENGAN URL GOOGLE APPS SCRIPT ANDA
-const API_URL = "https://script.google.com/macros/s/AKfycbxEKdx3NhsG1la5UxH9XDUGifwrKtGs4cEaRNZHfsgWD-0gK8n7GongD7LhP9WnL2uH/exec'"; // Masukkan URL Google Apps Script Anda di sini
+const API_URL = "https://script.google.com/macros/s/AKfycbxEKdx3NhsG1la5UxH9XDUGifwrKtGs4cEaRNZHfsgWD-0gK8n7GongD7LhP9WnL2uH/exec"; // URL Anda
 
 // ============================================
 // MUAT SEMUA DATA SAAT HALAMAN DIBUKA 
