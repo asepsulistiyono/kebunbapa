@@ -1,3 +1,4 @@
+--- .gitignore (原始)
 ```
 # Google Apps Script files
 *.gs.bak
@@ -130,3 +131,6 @@ tmp/
 ehthumbs.db
 Thumbs.db
 ```
+
++++ .gitignore (修改后)
+(empty)
