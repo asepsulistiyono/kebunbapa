@@ -1,6 +1,6 @@
 # 🌱 Kebun Pak Tani - Toko Sayur Organik
 
-Website toko sayur dan buah organik segar langsung dari kebun!
+Website toko sayur dan buah organik segar langsung dari kebun!!
 
 ## 📋 Deskripsi
 Proyek ini adalah website sederhana untuk menampilkan produk sayur dan buah organik dari "Kebun Pak Tani". Website ini menggunakan Google Sheets sebagai backend database dan Google Apps Script sebagai API.
